@@ -1,0 +1,217 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#050505;
+    color:white;
+    min-height:100vh;
+}
+
+/* MENU */
+
+.navbar{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:20px;
+    background:#0d0d0d;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar button{
+    padding:12px 25px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:18px;
+    background:white;
+    transition:0.3s;
+}
+
+.navbar button:hover{
+    transform:translateY(-3px);
+}
+
+/* TAB */
+
+.tab{
+    display:none;
+    padding:30px;
+}
+
+.tab.active{
+    display:block;
+}
+
+/* CARD */
+
+.card{
+    max-width:1200px;
+    margin:auto;
+    padding:30px;
+    border-radius:25px;
+    background:linear-gradient(
+        135deg,
+        #002b24,
+        #0f6d6d,
+        #36c4d0
+    );
+}
+
+/* HOME */
+
+#home h1{
+    text-align:center;
+    color:#00ff88;
+    font-size:55px;
+    margin-bottom:25px;
+}
+
+#home p{
+    text-align:center;
+    font-size:22px;
+    margin-top:15px;
+}
+
+/* CHATBOT */
+
+.chat-top{
+    display:flex;
+    gap:15px;
+    margin-bottom:15px;
+}
+
+.chat-top select{
+    flex:1;
+    padding:10px;
+    border-radius:10px;
+}
+
+.chat-top button{
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.chat-box{
+    background:#1f1f1f;
+    height:400px;
+    overflow-y:auto;
+    border-radius:15px;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #555;
+}
+
+.chat-input{
+    display:flex;
+    gap:10px;
+}
+
+.chat-input input{
+    flex:1;
+    padding:15px;
+    border-radius:10px;
+    border:none;
+}
+
+.chat-input button{
+    width:120px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* TOOL */
+
+.tool-item{
+    background:#2a2a2a;
+    padding:18px;
+    border-radius:15px;
+    margin-top:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.tool-item:hover{
+    background:#444;
+}
+
+.tool-content{
+    margin-top:20px;
+    background:#1f1f1f;
+    padding:20px;
+    border-radius:15px;
+    min-height:150px;
+}
+
+/* PROFILE */
+
+#profile input{
+    padding:12px;
+    border-radius:10px;
+    border:none;
+    width:300px;
+}
+
+#profile button{
+    padding:12px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+#profileName{
+    margin-top:20px;
+    color:#00ff88;
+}
+
+/* ABOUT */
+
+#about p{
+    margin-top:15px;
+    font-size:20px;
+}
+
+#about a{
+    color:#00ff88;
+    text-decoration:none;
+}
+
+#about a:hover{
+    text-decoration:underline;
+}
+
+/* LIGHT MODE */
+
+.light-mode{
+    background:#f5f5f5;
+    color:black;
+}
+
+.light-mode .card{
+    background:white;
+    color:black;
+}
+
+.light-mode .chat-box{
+    background:#eeeeee;
+    color:black;
+}
+
+.light-mode .tool-content{
+    background:#eeeeee;
+    color:black;
+}
+
+.light-mode .tool-item{
+    background:#dddddd;
+    color:black;
+}

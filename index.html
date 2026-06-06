@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Hoàng Tấn Phát</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- MENU -->
+    <nav class="navbar">
+        <button onclick="showTab('home')">🏠 Trang Chủ</button>
+        <button onclick="showTab('chatbot')">🤖 Chatbot</button>
+        <button onclick="showTab('tool')">📚 Học Tool</button>
+        <button onclick="showTab('profile')">👤 Hồ Sơ</button>
+        <button onclick="showTab('about')">ℹ️ Về Chúng Tôi</button>
+    </nav>
+
+    <!-- TRANG CHỦ -->
+    <section id="home" class="tab active">
+        <div class="card">
+            <h1>💚 Chào mừng bạn đến với website Hoàng Tấn Phát</h1>
+
+            <p>
+                Đây là website học lập trình, chatbot và công nghệ.
+            </p>
+
+            <p>
+                Bạn có thể sử dụng Chatbot, tìm hiểu HTML, CSS, JavaScript
+                và nhiều kiến thức hữu ích khác.
+            </p>
+        </div>
+    </section>
+
+    <!-- CHATBOT -->
+    <section id="chatbot" class="tab">
+        <div class="card">
+
+            <h2>🤖 Chatbot</h2>
+
+            <div class="chat-top">
+                <select id="chatList"></select>
+
+                <button onclick="newChat()">
+                    ➕ New Chat
+                </button>
+            </div>
+
+            <div id="chatBox" class="chat-box">
+                <div><b>Bot:</b> Xin chào 👋</div>
+            </div>
+
+            <div class="chat-input">
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Nhập tin nhắn..."
+                >
+
+                <button onclick="sendMessage()">
+                    Gửi
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HỌC TOOL -->
+    <section id="tool" class="tab">
+        <div class="card">
+
+            <h2>📚 Học Tool</h2>
+
+            <div class="tool-item" onclick="showTool('html')">
+                🌐 HTML
+            </div>
+
+            <div class="tool-item" onclick="showTool('css')">
+                🎨 CSS
+            </div>
+
+            <div class="tool-item" onclick="showTool('js')">
+                ⚡ JavaScript
+            </div>
+
+            <div class="tool-item" onclick="showTool('vscode')">
+                💻 VS Code
+            </div>
+
+            <div id="toolContent" class="tool-content">
+                Chọn một mục để xem nội dung.
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HỒ SƠ -->
+    <section id="profile" class="tab">
+        <div class="card">
+
+            <h2>👤 Hồ Sơ</h2>
+
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="Nhập tên mới"
+            >
+
+            <button onclick="changeName()">
+                Đổi Tên
+            </button>
+
+            <br><br>
+
+            <button onclick="toggleTheme()">
+                🌙 Đổi Giao Diện
+            </button>
+
+            <h3 id="profileName">
+                Hoàng Tấn Phát
+            </h3>
+
+        </div>
+    </section>
+
+    <!-- VỀ CHÚNG TÔI -->
+    <section id="about" class="tab">
+        <div class="card">
+
+            <h2>ℹ️ Về Chúng Tôi</h2>
+
+            <p>
+                Website được phát triển bởi Hoàng Tấn Phát.
+            </p>
+
+            <p>
+                📺 Youtube:
+                <a href="https://www.youtube.com/@pht_dev2"
+                   target="_blank">
+                    PHT Dev
+                </a>
+            </p>
+
+            <p>
+                📘 Facebook:
+                <a href="https://www.facebook.com/profile.php?id=61582777690998"
+                   target="_blank">
+                    Trang Facebook
+                </a>
+            </p>
+
+            <p>
+                🎵 TikTok:
+                <a href="https://www.tiktok.com/@pht_dev"
+                   target="_blank">
+                    @pht_dev
+                </a>
+            </p>
+
+        </div>
+    </section>
+
+    <script src="javaScript.js"></script>
+
+</body>
+</html>
