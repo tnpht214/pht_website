@@ -4,54 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Hoàng Tấn Phát</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- MENU -->
-    <nav class="navbar">
-        <button onclick="showTab('home')">🏠 Trang Chủ</button>
-        <button onclick="showTab('chatbot')">🤖 Chatbot</button>
-        <button onclick="showTab('tool')">📚 Học Tool</button>
-        <button onclick="showTab('profile')">👤 Hồ Sơ</button>
-        <button onclick="showTab('about')">ℹ️ Về Chúng Tôi</button>
-    </nav>
+    <div class="navbar">
+
+        <button onclick="showTab('home')" class="menu-btn">
+            🏠 Trang Chủ
+        </button>
+
+        <button onclick="showTab('chatbot')" class="menu-btn">
+            🤖 Chatbot
+        </button>
+
+        <button onclick="showTab('tool')" class="menu-btn">
+            📚 Học Tool
+        </button>
+
+        <button onclick="showTab('casio')" class="menu-btn">
+            🧮 Casio 580VNX
+        </button>
+
+        <button onclick="showTab('about')" class="menu-btn">
+            ℹ️ Về Chúng Tôi
+        </button>
+
+    </div>
 
     <!-- TRANG CHỦ -->
-    <section id="home" class="tab active">
-        <div class="card">
-            <h1>💚 Chào mừng bạn đến với website Hoàng Tấn Phát</h1>
+    <div id="home" class="tab active">
+
+        <div class="box">
+            <h1>
+                💚 Chào mừng bạn đến với website Hoàng Tấn Phát
+            </h1>
 
             <p>
-                Đây là website học lập trình, chatbot và công nghệ.
-            </p>
-
-            <p>
-                Bạn có thể sử dụng Chatbot, tìm hiểu HTML, CSS, JavaScript
-                và nhiều kiến thức hữu ích khác.
+                Đây là website học tập, chatbot AI,
+                chia sẻ tài liệu Casio 580VNX,
+                lập trình HTML CSS JavaScript
+                và nhiều nội dung hữu ích khác.
             </p>
         </div>
-    </section>
+
+    </div>
 
     <!-- CHATBOT -->
-    <section id="chatbot" class="tab">
-        <div class="card">
+    <div id="chatbot" class="tab">
 
-            <h2>🤖 Chatbot</h2>
+        <div class="box">
+
+            <h2>🤖 AI Hoàng Tấn Phát</h2>
 
             <div class="chat-top">
-                <select id="chatList"></select>
 
                 <button onclick="newChat()">
                     ➕ New Chat
                 </button>
+
+                <select id="chatList"
+                        onchange="loadChat()">
+                </select>
+
             </div>
 
-            <div id="chatBox" class="chat-box">
-                <div><b>Bot:</b> Xin chào 👋</div>
-            </div>
+            <div id="chatBox"></div>
 
             <div class="chat-input">
+
                 <input
                     type="text"
                     id="userInput"
@@ -61,81 +84,128 @@
                 <button onclick="sendMessage()">
                     Gửi
                 </button>
+
             </div>
 
         </div>
-    </section>
+
+    </div>
 
     <!-- HỌC TOOL -->
-    <section id="tool" class="tab">
-        <div class="card">
+    <div id="tool" class="tab">
+
+        <div class="box">
 
             <h2>📚 Học Tool</h2>
 
-            <div class="tool-item" onclick="showTool('html')">
-                🌐 HTML
-            </div>
+            <details>
+                <summary>🌐 HTML</summary>
+                <p>
+                    HTML dùng để tạo cấu trúc website.
+                    Đây là nền tảng đầu tiên khi học lập trình web.
+                </p>
+            </details>
 
-            <div class="tool-item" onclick="showTool('css')">
-                🎨 CSS
-            </div>
+            <details>
+                <summary>🎨 CSS</summary>
+                <p>
+                    CSS dùng để thiết kế giao diện,
+                    màu sắc, hiệu ứng và bố cục website.
+                </p>
+            </details>
 
-            <div class="tool-item" onclick="showTool('js')">
-                ⚡ JavaScript
-            </div>
+            <details>
+                <summary>⚡ JavaScript</summary>
+                <p>
+                    JavaScript giúp website có tính năng,
+                    nút bấm, chatbot, trò chơi và nhiều hiệu ứng.
+                </p>
+            </details>
 
-            <div class="tool-item" onclick="showTool('vscode')">
-                💻 VS Code
-            </div>
+            <details>
+                <summary>💻 VS Code</summary>
+                <p>
+                    VS Code là phần mềm lập trình
+                    được sử dụng phổ biến nhất hiện nay.
+                </p>
+            </details>
 
-            <div id="toolContent" class="tool-content">
-                Chọn một mục để xem nội dung.
-            </div>
-
-        </div>
-    </section>
-
-    <!-- HỒ SƠ -->
-    <section id="profile" class="tab">
-        <div class="card">
-
-            <h2>👤 Hồ Sơ</h2>
-
-            <input
-                type="text"
-                id="nameInput"
-                placeholder="Nhập tên mới"
-            >
-
-            <button onclick="changeName()">
-                Đổi Tên
-            </button>
-
-            <br><br>
-
-            <button onclick="toggleTheme()">
-                🌙 Đổi Giao Diện
-            </button>
-
-            <h3 id="profileName">
-                Hoàng Tấn Phát
-            </h3>
+            <details>
+                <summary>📖 Cần giỏi môn gì?</summary>
+                <p>
+                    Nên học tốt Tin học,
+                    Toán và Tiếng Anh để phát triển kỹ năng lập trình.
+                </p>
+            </details>
 
         </div>
-    </section>
+
+    </div>
+
+    <!-- CASIO -->
+    <div id="casio" class="tab">
+
+        <div class="box">
+
+            <h2>🧮 Khám phá với Casio 580VNX</h2>
+
+            <p>
+                Máy tính Casio là loại máy tính bỏ túi
+                được học sinh sử dụng phổ biến hiện nay.
+                Ngoài việc học tập,
+                nhiều bạn còn khám phá các trò chơi thú vị như:
+                Spell, Rắn săn mồi, Trục quay...
+            </p>
+
+            <p>
+                Hãy cùng nhau tìm hiểu những điều thú vị
+                với Casio 580VNX nhé!
+            </p>
+
+            <p>
+                <b>Cre: chungtn</b>
+            </p>
+
+            <hr>
+
+            <h3>📂 Tài liệu Casio</h3>
+
+            <ul>
+
+                <li>
+                    <a href="casio/file1.pdf"
+                       target="_blank">
+                       File Casio 1
+                    </a>
+                </li>
+
+                <li>
+                    <a href="casio/file2.pdf"
+                       target="_blank">
+                       File Casio 2
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
 
     <!-- VỀ CHÚNG TÔI -->
-    <section id="about" class="tab">
-        <div class="card">
+    <div id="about" class="tab">
+
+        <div class="box">
 
             <h2>ℹ️ Về Chúng Tôi</h2>
 
             <p>
-                Website được phát triển bởi Hoàng Tấn Phát.
+                Website được phát triển bởi
+                Hoàng Tấn Phát.
             </p>
 
             <p>
-                📺 Youtube:
+                📺 YouTube:
                 <a href="https://www.youtube.com/@pht_dev2"
                    target="_blank">
                     PHT Dev
@@ -159,7 +229,8 @@
             </p>
 
         </div>
-    </section>
+
+    </div>
 
     <script src="javaScript.js"></script>
 
