@@ -2,7 +2,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -22,6 +22,7 @@ body{
     position:sticky;
     top:0;
     z-index:1000;
+    flex-wrap:wrap;
 }
 
 .navbar button{
@@ -31,7 +32,7 @@ body{
     cursor:pointer;
     font-size:18px;
     background:white;
-    transition:0.3s;
+    transition:.3s;
 }
 
 .navbar button:hover{
@@ -49,9 +50,9 @@ body{
     display:block;
 }
 
-/* CARD */
+/* BOX */
 
-.card{
+.box{
     max-width:1200px;
     margin:auto;
     padding:30px;
@@ -76,7 +77,6 @@ body{
 #home p{
     text-align:center;
     font-size:22px;
-    margin-top:15px;
 }
 
 /* CHATBOT */
@@ -100,7 +100,7 @@ body{
     cursor:pointer;
 }
 
-.chat-box{
+#chatBox{
     background:#1f1f1f;
     height:400px;
     overflow-y:auto;
@@ -118,8 +118,8 @@ body{
 .chat-input input{
     flex:1;
     padding:15px;
-    border-radius:10px;
     border:none;
+    border-radius:10px;
 }
 
 .chat-input button{
@@ -131,46 +131,44 @@ body{
 
 /* TOOL */
 
-.tool-item{
-    background:#2a2a2a;
-    padding:18px;
-    border-radius:15px;
-    margin-top:15px;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.tool-item:hover{
-    background:#444;
-}
-
-.tool-content{
-    margin-top:20px;
+details{
     background:#1f1f1f;
-    padding:20px;
-    border-radius:15px;
-    min-height:150px;
+    margin-top:15px;
+    padding:15px;
+    border-radius:12px;
 }
 
-/* PROFILE */
-
-#profile input{
-    padding:12px;
-    border-radius:10px;
-    border:none;
-    width:300px;
-}
-
-#profile button{
-    padding:12px 20px;
-    border:none;
-    border-radius:10px;
+summary{
     cursor:pointer;
+    font-size:20px;
+    font-weight:bold;
 }
 
-#profileName{
-    margin-top:20px;
+details p{
+    margin-top:10px;
+    line-height:1.8;
+}
+
+/* CASIO */
+
+#casio h2{
     color:#00ff88;
+    margin-bottom:20px;
+}
+
+#casio p{
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+#casio a{
+    color:#00ff88;
+    text-decoration:none;
+}
+
+#casio a:hover{
+    text-decoration:underline;
 }
 
 /* ABOUT */
@@ -196,22 +194,17 @@ body{
     color:black;
 }
 
-.light-mode .card{
+.light-mode .box{
     background:white;
     color:black;
 }
 
-.light-mode .chat-box{
+.light-mode #chatBox{
     background:#eeeeee;
     color:black;
 }
 
-.light-mode .tool-content{
+.light-mode details{
     background:#eeeeee;
-    color:black;
-}
-
-.light-mode .tool-item{
-    background:#dddddd;
     color:black;
 }
