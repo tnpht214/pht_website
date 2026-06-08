@@ -7,7 +7,11 @@ function showTab(tabId) {
         tab.classList.remove("active");
     });
 
-    document.getElementById(tabId).classList.add("active");
+    const target = document.getElementById(tabId);
+
+    if (target) {
+        target.classList.add("active");
+    }
 }
 
 // ======================
@@ -56,6 +60,7 @@ function saveData() {
         "chats",
         JSON.stringify(chats)
     );
+
 }
 
 // ======================
@@ -65,22 +70,28 @@ function saveData() {
 function newChat() {
 
     const chat = {
-        name: "Chat " + (chats.length + 1),
+
+        name:
+        "Chat " +
+        (chats.length + 1),
 
         messages: [
             "Bot: Xin chào 👋"
         ]
+
     };
 
     chats.push(chat);
 
-    currentChat = chats.length - 1;
+    currentChat =
+    chats.length - 1;
 
     saveData();
 
     updateChatList();
 
     renderMessages();
+
 }
 
 // ======================
@@ -90,26 +101,38 @@ function newChat() {
 function updateChatList() {
 
     const select =
-    document.getElementById("chatList");
+    document.getElementById(
+        "chatList"
+    );
 
     if (!select) return;
 
     select.innerHTML = "";
 
-    chats.forEach((chat, index) => {
+    chats.forEach(
+        (chat, index) => {
 
-        let option =
-        document.createElement("option");
+            let option =
+            document.createElement(
+                "option"
+            );
 
-        option.value = index;
+            option.value =
+            index;
 
-        option.textContent = chat.name;
+            option.textContent =
+            chat.name;
 
-        select.appendChild(option);
+            select.appendChild(
+                option
+            );
 
-    });
+        }
+    );
 
-    select.value = currentChat;
+    select.value =
+    currentChat;
+
 }
 
 // ======================
@@ -119,12 +142,15 @@ function updateChatList() {
 function loadChat() {
 
     const select =
-    document.getElementById("chatList");
+    document.getElementById(
+        "chatList"
+    );
 
     currentChat =
     Number(select.value);
 
     renderMessages();
+
 }
 
 // ======================
@@ -134,7 +160,9 @@ function loadChat() {
 function renderMessages() {
 
     const box =
-    document.getElementById("chatBox");
+    document.getElementById(
+        "chatBox"
+    );
 
     if (!box) return;
 
@@ -146,16 +174,17 @@ function renderMessages() {
     ) return;
 
     chats[currentChat]
-    .messages
-    .forEach(msg => {
+        .messages
+        .forEach(msg => {
 
-        box.innerHTML +=
-        msg + "<br>";
+            box.innerHTML +=
+                msg + "<br>";
 
-    });
+        });
 
     box.scrollTop =
     box.scrollHeight;
+
 }
 
 // ======================
@@ -165,21 +194,32 @@ function renderMessages() {
 function sendMessage() {
 
     const input =
-    document.getElementById("userInput");
+    document.getElementById(
+        "userInput"
+    );
+
+    if (!input) return;
 
     let text =
     input.value.trim();
 
-    if (text === "") return;
+    if (
+        text === ""
+    ) return;
 
-    if (currentChat === -1) {
+    if (
+        currentChat === -1
+    ) {
+
         newChat();
+
     }
 
     chats[currentChat]
-    .messages.push(
-        "Bạn: " + text
-    );
+        .messages
+        .push(
+            "Bạn: " + text
+        );
 
     let botReply =
     "Mình chưa biết. Hãy dạy mình bằng: dạy câu hỏi : câu trả lời";
@@ -190,7 +230,7 @@ function sendMessage() {
 
     if (
         text.toLowerCase()
-        .startsWith("dạy ")
+            .startsWith("dạy ")
     ) {
 
         let data =
@@ -205,20 +245,22 @@ function sendMessage() {
 
             let question =
             parts[0]
-            .trim()
-            .toLowerCase();
+                .trim()
+                .toLowerCase();
 
             let answer =
             parts.slice(1)
-            .join(":")
-            .trim();
+                .join(":")
+                .trim();
 
-            knowledge[question] =
-            answer;
+            knowledge[
+                question
+            ] = answer;
 
             botReply =
             "Mình đã học: " +
             question;
+
         }
 
     } else {
@@ -235,23 +277,33 @@ function sendMessage() {
             question.toLowerCase();
 
             if (
+
                 userText === q ||
+
                 userText.includes(q) ||
+
                 q.includes(userText)
+
             ) {
 
                 botReply =
-                knowledge[question];
+                knowledge[
+                    question
+                ];
 
                 break;
+
             }
+
         }
+
     }
 
     chats[currentChat]
-    .messages.push(
-        "Bot: " + botReply
-    );
+        .messages
+        .push(
+            "Bot: " + botReply
+        );
 
     saveData();
 
@@ -260,6 +312,7 @@ function sendMessage() {
     updateChatList();
 
     input.value = "";
+
 }
 
 // ======================
@@ -282,7 +335,8 @@ document.addEventListener(
                 function (e) {
 
                     if (
-                        e.key === "Enter"
+                        e.key ===
+                        "Enter"
                     ) {
 
                         sendMessage();
@@ -291,6 +345,7 @@ document.addEventListener(
 
                 }
             );
+
         }
 
         if (
@@ -308,5 +363,6 @@ document.addEventListener(
             renderMessages();
 
         }
+
     }
 );
